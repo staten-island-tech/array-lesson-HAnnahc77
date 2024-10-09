@@ -137,7 +137,8 @@ console.log("Expensive Products:", expensiveProducts);
 3. **Highly Rated Products**: Filter products with a rating of 4.5 or above.
 
 ```javascript
-
+const topRatedProducts = products.filter((product) => product.rating >= 4.5);
+console.log(topRatedProducts);
 ```
 
 ### Part 3: Combined `forEach` and `filter`
@@ -145,13 +146,23 @@ console.log("Expensive Products:", expensiveProducts);
 1. **Log Highly Rated Product Names**: Use `filter` to get the highly rated products (rating >= 4.5) and then use `forEach` to log only their names.
 
 ```javascript
-
+const topRatedProducts = products.filter((product) => product.rating >= 4.5);
+topRatedProducts.forEach((product) => console.log(product.name));
 ```
 
 2. **Affordable Electronics**: Use `filter` to find all the products in the 'Electronics' category that are priced below $1000. After filtering, use `forEach` to log their details.
 
 ```javascript
+const affordableProducts = products.filter((product) => 
+  product.category === "Electronics" && product.price < 1000
+);
 
+affordableProducts.forEach((product) => {
+  console.log(product.name);
+  console.log(product.price);
+  console.log(product.category);
+  console.log(product.rating);
+  });
 ```
 
 ---
